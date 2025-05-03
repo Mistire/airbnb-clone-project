@@ -68,6 +68,74 @@ Oversees the deployment, automation, and monitoring of the backend application. 
 ### 🧪 QA Engineer
 Ensures the backend functionalities are tested thoroughly and meet both functional and non-functional requirements. QA engineers write automated test scripts, conduct manual tests, and track defects.
 
+
+## ⚙️ Technology Stack
+
+This project utilizes a modern and scalable technology stack to ensure performance, maintainability, and ease of development. Each tool and framework plays a specific role in delivering a robust backend infrastructure.
+
+### 🐍 Django
+A high-level Python web framework used for building scalable web applications. It provides a clean architecture and built-in features for user authentication, ORM, and admin interface, which accelerate backend development.
+
+**Purpose:**  
+To build the core backend logic and serve RESTful APIs.
+
+---
+
+### 🧰 Django REST Framework (DRF)
+A powerful toolkit built on top of Django to simplify the creation of RESTful APIs. It supports serialization, viewsets, permissions, and pagination.
+
+**Purpose:**  
+To develop secure and customizable REST APIs for users, properties, bookings, and more.
+
+---
+
+### 🐘 PostgreSQL
+A powerful, open-source relational database system known for reliability and performance.
+
+**Purpose:**  
+To store and manage all persistent data such as user profiles, property listings, bookings, and transactions.
+
+---
+
+### 🔍 GraphQL
+A flexible query language for APIs that allows clients to request only the data they need.
+
+**Purpose:**  
+To provide efficient and customizable data querying for frontend clients and integrations.
+
+---
+
+### 🟢 Celery
+An asynchronous task queue/job queue based on distributed message passing.
+
+**Purpose:**  
+To handle background tasks such as sending notifications, emails, and processing payments.
+
+---
+
+### 🧠 Redis
+An in-memory data structure store used as a database, cache, and message broker.
+
+**Purpose:**  
+To support Celery for task queuing and improve performance via caching.
+
+---
+
+### 🐳 Docker
+A platform for developing, shipping, and running applications in containers.
+
+**Purpose:**  
+To create consistent development and production environments, making deployment easier and more reliable.
+
+---
+
+### 🔁 CI/CD Pipelines
+Automated tools and workflows to continuously build, test, and deploy the codebase.
+
+**Purpose:**  
+To ensure code quality, prevent bugs, and accelerate feature delivery by automating the testing and deployment process.
+
+
 **Key Responsibilities:**
 - Write test cases and perform automated and manual testing.
 - Validate API endpoints for correctness and reliability.
