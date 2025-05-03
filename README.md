@@ -236,3 +236,102 @@ Represents feedback given by users for a property after their stay.
 - One **Property** ➝ Many **Reviews**
 - One **Booking** ➝ One **Payment**
 
+
+## 🔍 Feature Breakdown
+
+This section outlines the core features of the Airbnb Clone backend and how each contributes to delivering a full-featured booking platform.
+
+### 👤 User Management
+Handles user registration, authentication, and profile updates. It ensures secure access to the platform and supports role-based functionality (e.g., guests and hosts).
+
+### 🏠 Property Management
+Allows hosts to list, update, and delete properties. Each property contains details such as pricing, description, and availability, forming the foundation for bookings.
+
+### 📆 Booking System
+Enables users to reserve available properties for specific dates. It handles booking lifecycle management including check-in, check-out, and booking updates.
+
+### 💳 Payment Processing
+Manages financial transactions related to bookings. It ensures secure and traceable payment flows, records transactions, and can be extended with third-party payment gateways.
+
+### 🌟 Review System
+Allows guests to leave ratings and comments on properties they’ve stayed in. This builds trust and provides feedback to both hosts and future users.
+
+### 📚 API Documentation
+The backend includes thorough documentation using the OpenAPI standard and GraphQL schema definitions. This facilitates ease of integration for frontend developers and third-party applications.
+
+### ⚡ Data Optimization
+Uses techniques like indexing and caching (via Redis) to enhance database performance. These optimizations ensure the system can handle large volumes of users and data efficiently.
+
+### 🔒 Security & Authorization
+Implements best practices in password hashing, token-based authentication, and permission checks to protect user data and restrict unauthorized access to resources.
+
+
+## 🔐 API Security
+
+Ensuring the security of the backend is critical for protecting user data, managing access to resources, and maintaining the integrity of financial transactions. Below are the key security measures that will be implemented in the Airbnb Clone backend.
+
+### 🔑 Authentication
+JWT (JSON Web Tokens) will be used for secure, stateless user authentication. This ensures only verified users can access protected routes, such as managing bookings or updating listings.
+
+**Why It Matters:** Prevents unauthorized access to user accounts and protects sensitive data like emails, profiles, and booking details.
+
+---
+
+### 🛡️ Authorization
+Role-based access control (RBAC) will be enforced to limit access based on user roles (e.g., host vs. guest). Certain actions like listing properties or viewing bookings will be restricted accordingly.
+
+**Why It Matters:** Prevents misuse of the system by ensuring users can only perform actions relevant to their role.
+
+---
+
+### 🚫 Rate Limiting
+Rate limiting will be implemented to prevent abuse of the API, such as brute-force login attempts or denial-of-service attacks.
+
+**Why It Matters:** Protects the backend from being overwhelmed by malicious traffic and helps maintain overall system stability.
+
+---
+
+### 🔒 Data Encryption
+Sensitive data such as passwords will be hashed using secure algorithms (e.g., bcrypt). HTTPS will be enforced for encrypted communication between client and server.
+
+**Why It Matters:** Safeguards personal and financial information from being intercepted or leaked.
+
+---
+
+### 🧪 Input Validation & Sanitization
+All incoming data will be validated and sanitized to prevent common web vulnerabilities like SQL Injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF).
+
+**Why It Matters:** Ensures system reliability and integrity by blocking malicious inputs and unexpected behavior.
+
+---
+
+### 🧯 Error Handling & Logging
+Secure error handling and centralized logging will be used to monitor suspicious activity without exposing sensitive internal details in API responses.
+
+**Why It Matters:** Maintains transparency for developers while preventing attackers from gaining insight into the system’s internals.
+
+
+## ⚙️ CI/CD Pipeline
+
+### What is CI/CD?
+
+CI/CD stands for Continuous Integration and Continuous Deployment/Delivery. It is a set of automated processes that allow developers to build, test, and deploy code changes more reliably and frequently. 
+
+### Why It Matters for This Project
+
+Implementing a CI/CD pipeline ensures that:
+- Code is automatically tested before being merged, reducing bugs and integration issues.
+- Updates can be deployed quickly and consistently across different environments.
+- The development process is streamlined, improving team productivity and collaboration.
+
+This is especially important for a project like the Airbnb Clone, which includes multiple complex features like booking systems, user authentication, and payments — all requiring reliability, stability, and scalability.
+
+### Tools Used
+
+- **GitHub Actions**: Automates testing and deployment workflows directly within GitHub.
+- **Docker**: Ensures consistent environments across development, testing, and production stages.
+- **Docker Compose**: Manages multi-container applications (e.g., Django app + PostgreSQL + Redis) for testing and local development.
+- **PostgreSQL Service in CI**: Provides a live test database during integration tests.
+- **Redis Service in CI**: Supports background task testing and caching behavior (e.g., Celery tasks).
+- **Heroku / AWS / Render / Railway** (optional): Used for automated deployment to cloud hosting environments.
+
